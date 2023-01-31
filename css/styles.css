@@ -43,7 +43,7 @@ a {
 }
 
 .clr-accent {
-    color: var(--clr-accent);
+    color: var(--clr-accent) !important;
 }
 
 .bg-accent {
@@ -54,7 +54,7 @@ a {
 .split {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 2rem;
 }
 
 .container {
@@ -139,7 +139,8 @@ header {
 
 /* Services */
 
-.services,footer {
+.services,
+footer {
     background-image: url(../asset/image/footer-bg.png), linear-gradient(black, black);
     color: white !important
 }
@@ -157,6 +158,7 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 1em;
 }
 
 
@@ -166,7 +168,7 @@ p {
 }
 
 .author-info+button {
-    margin-top: 2em;
+    /* margin-top: 1em; */
 }
 
 .grid {
@@ -199,36 +201,158 @@ p {
 .contact {
     text-align: center;
 }
+
 .contact img {
-    width:70%;
+    width: 70%;
     margin: 2rem auto;
 }
 
-.contact h4,.contact h3 {
-    margin:auto;
+.contact h4,
+.contact h3 {
+    margin: auto;
 }
 
 /* blog */
 .blog .section__sub-title {
     margin-bottom: 2rem;
 }
+
 .card {
-    box-shadow: 5px 5px 10px rgba(155, 151, 151, 0.829),-5px -5px 10px rgba(155, 151, 151, 0.836);
+    box-shadow: 5px 5px 10px rgba(155, 151, 151, 0.829), -5px -5px 10px rgba(155, 151, 151, 0.836);
     border-radius: 1em;
     overflow: hidden;
     min-width: 10rem;
 }
+
 .card-body {
-    padding:1rem;
+    padding: 1rem;
 }
 
-.card-img {
+.card-img {}
+
+
+/* footer */
+
+footer .split {
+    gap:1em;
 }
 
-
+.logo+p {
+    margin-block: 1em;
+}
 
 
 footer a {
-    color:white !important
+    color: white !important;
 }
 
+.social {
+    flex-direction: row;
+    gap: 1.5rem
+}
+
+/* desktop design */
+
+@media screen and (min-width:48rem){
+    .split > * {
+        flex:1;
+    }
+    .banner {
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+    }
+
+    section {
+        padding-block: 8rem;
+    }
+
+    .btn-primary {
+        margin: 2rem 1rem;
+    }
+
+    .navbar {
+        
+        display: flex;
+        align-items: center;
+    justify-content: space-between;
+    }
+
+    .navbar-nav {
+        display: flex;
+    }
+    .split {
+        flex-direction: row;
+    }
+
+    .grid {
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .services {
+        padding-bottom: 15rem;
+    }
+
+    .contact .container{
+        background-color: var(--clr-accent);
+        color:white;
+        padding: 1rem 2rem 2rem;
+        width:min(75%,64rem);
+        text-align:left;
+        border-radius: 1.5rem;
+        transform: translateY(-50%);
+
+        gap:1rem;
+        flex-direction: column;
+        align-items: center;
+        
+    }
+
+    .contact__info {
+        flex:initial;
+        align-items: center;
+        gap:2rem;
+    }
+
+    .contact__img {
+        max-width: 5rem;
+    }
+
+    .appointment {
+        display:flex;
+    }
+
+    .blog {
+        padding-top:0;
+    }
+
+    footer .split {
+        gap: 3rem;
+    }
+}
+
+
+@media screen and (min-width:80rem) {
+
+    .services {
+        padding-bottom: 8rem;
+    }
+    .contact {
+        padding-inline:2rem
+    }
+
+   .contact .split {
+        gap:2rem
+    } 
+    
+    .contact .container {
+        flex-direction : row;
+        gap:4rem;
+        padding-inline:3rem
+
+    }
+
+   
+}
